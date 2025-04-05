@@ -1,6 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage.tsx';
 import Header from './components/Header.tsx';
+import Modal from 'react-modal';
+
+Modal.setAppElement('#root');
 
 function App() {
   return (
