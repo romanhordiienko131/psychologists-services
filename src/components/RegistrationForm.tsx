@@ -4,6 +4,9 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { registrationSchema } from '../validation/schemas.ts';
 import { RegistrationFormData } from '../validation/types.ts';
+import { registerUser } from '../firebase/services/auth.ts';
+import toast from 'react-hot-toast';
+import { getFirebaseErrorMessage } from '../helpers/getFirebaseErrorMessage.ts';
 
 function RegistrationForm() {
   const {
@@ -14,8 +17,21 @@ function RegistrationForm() {
     resolver: yupResolver(registrationSchema),
   });
 
+  const handleRegistration = async ({
+    name,
+    email,
+    password,
+  }: RegistrationFormData) => {
+    try {
+      await registerUser(name, email, password);
+    } catch (error) {
+      const message = getFirebaseErrorMessage(error);
+      toast.error(message);
+    }
+  };
+
   return (
-    <form onSubmit={handleSubmit((data) => console.log(data))}>
+    <form onSubmit={handleSubmit(handleRegistration)}>
       <p className="-tracking-2 mb-5 text-[2.5rem] leading-12 font-medium">
         Registration
       </p>

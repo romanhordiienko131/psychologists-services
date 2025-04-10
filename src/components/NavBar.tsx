@@ -1,7 +1,11 @@
 import { NavLink, NavLinkRenderProps } from 'react-router-dom';
 import clsx from 'clsx';
 
-function NavBar() {
+interface Props {
+  isLoggedIn: boolean;
+}
+
+function NavBar({ isLoggedIn }: Props) {
   function getLinkClasses({ isActive }: NavLinkRenderProps) {
     return clsx(
       '-tracking-1 relative leading-5',
@@ -23,6 +27,13 @@ function NavBar() {
             Psychologists
           </NavLink>
         </li>
+        {isLoggedIn && (
+          <li>
+            <NavLink className={getLinkClasses} to="/favorites">
+              Favorites
+            </NavLink>
+          </li>
+        )}
       </ul>
     </nav>
   );

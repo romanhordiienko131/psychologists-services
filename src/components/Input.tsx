@@ -5,7 +5,7 @@ interface Props<T extends FieldValues>
   extends InputHTMLAttributes<HTMLInputElement> {
   fieldName: Path<T>;
   register: UseFormRegister<T>;
-  error: string | undefined;
+  error?: string;
 }
 
 function Input<T extends FieldValues>({

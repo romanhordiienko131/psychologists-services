@@ -4,6 +4,9 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { loginSchema } from '../validation/schemas.ts';
 import { LoginFormData } from '../validation/types.ts';
+import { loginUser } from '../firebase/services/auth.ts';
+import { getFirebaseErrorMessage } from '../helpers/getFirebaseErrorMessage.ts';
+import toast from 'react-hot-toast';
 
 function LoginForm() {
   const {
@@ -14,8 +17,17 @@ function LoginForm() {
     resolver: yupResolver(loginSchema),
   });
 
+  const handleLogin = async ({ email, password }: LoginFormData) => {
+    try {
+      await loginUser(email, password);
+    } catch (error) {
+      const message = getFirebaseErrorMessage(error);
+      toast.error(message);
+    }
+  };
+
   return (
-    <form onSubmit={handleSubmit((data) => console.log(data))}>
+    <form onSubmit={handleSubmit(handleLogin)}>
       <p className="-tracking-2 mb-5 text-[2.5rem] leading-12 font-medium">
         Log In
       </p>
