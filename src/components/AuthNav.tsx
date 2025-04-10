@@ -29,14 +29,9 @@ function AuthNav() {
         </li>
       </ul>
 
-      <Modal isOpen={modal === 'login'} onRequestClose={() => setModal('none')}>
-        <LoginForm />
-      </Modal>
-      <Modal
-        isOpen={modal === 'register'}
-        onRequestClose={() => setModal('none')}
-      >
-        <RegistrationForm />
+      <Modal isOpen={modal !== 'none'} onRequestClose={() => setModal('none')}>
+        {modal === 'login' && <LoginForm />}
+        {modal === 'register' && <RegistrationForm />}
       </Modal>
     </>
   );
