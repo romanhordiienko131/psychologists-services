@@ -9,8 +9,10 @@ function UserNav({ user }: Props) {
   return (
     <div className="flex items-center gap-7">
       <div className="flex items-center gap-3.5">
-        <img src="/icons/user.svg" alt="User" />
-        <p className="-tracking-1 leading-5 font-medium">{user.displayName}</p>
+        <img src="/icons/user.svg" alt="" />
+        <div className="-tracking-1 leading-5 font-medium">
+          {user.displayName}
+        </div>
       </div>
       <button
         onClick={signOutUser}

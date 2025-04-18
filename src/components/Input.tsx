@@ -21,7 +21,7 @@ function Input<T extends FieldValues>({
         {...rest}
         className="w-full rounded-xl border border-black/10 px-4.5 py-4 leading-5 placeholder-black"
       />
-      {error && <p className="text-red-400">{error}</p>}
+      {error && <div className="text-red-400">{error}</div>}
     </div>
   );
 }

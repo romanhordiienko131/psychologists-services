@@ -5,7 +5,7 @@ interface Props<T extends FieldValues>
   extends InputHTMLAttributes<HTMLInputElement> {
   fieldName: Path<T>;
   register: UseFormRegister<T>;
-  error: string | undefined;
+  error?: string;
 }
 
 function PasswordInput<T extends FieldValues>({
@@ -22,7 +22,7 @@ function PasswordInput<T extends FieldValues>({
         {...register(fieldName)}
         {...rest}
         type={passVisible ? 'text' : 'password'}
-        className="w-full rounded-xl border border-black/10 px-4.5 py-4 leading-5 placeholder-black"
+        className="w-full rounded-xl border border-black/10 py-4 pr-11 pl-4.5 leading-5 placeholder-black"
       />
       {error && <p className="text-red-400">{error}</p>}
       <button

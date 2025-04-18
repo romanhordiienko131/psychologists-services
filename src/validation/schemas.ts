@@ -20,3 +20,11 @@ export const loginSchema = yup.object({
   email: yup.string().email('Invalid email').required('Email is required'),
   password: yup.string().required('Password is required'),
 });
+
+export const appointmentSchema = yup.object({
+  name: yup.string().required('Name is required'),
+  phoneNumber: yup.string().required('Phone number is required'),
+  meetingTime: yup.string().required('Meeting time is required'),
+  email: yup.string().email('Invalid email').required('Email is required'),
+  comment: yup.string(),
+});

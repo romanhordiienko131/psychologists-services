@@ -28,9 +28,9 @@ function LoginForm() {
 
   return (
     <form onSubmit={handleSubmit(handleLogin)}>
-      <p className="-tracking-2 mb-5 text-[2.5rem] leading-12 font-medium">
+      <h2 className="-tracking-2 mb-5 text-[2.5rem] leading-12 font-medium">
         Log In
-      </p>
+      </h2>
       <p className="mb-10 leading-5 text-black/50">
         Welcome back! Please enter your credentials to access your account and
         continue your search for a psychologist.
@@ -41,13 +41,13 @@ function LoginForm() {
           placeholder="Email"
           fieldName="email"
           register={register}
-          error={errors.email && errors.email.message}
+          error={errors.email?.message}
         />
         <PasswordInput<LoginFormData>
           placeholder="Password"
           fieldName="password"
           register={register}
-          error={errors.password && errors.password.message}
+          error={errors.password?.message}
         />
       </div>
       <button

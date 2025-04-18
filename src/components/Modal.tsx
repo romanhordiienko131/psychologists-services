@@ -5,6 +5,7 @@ interface Props {
   isOpen: boolean;
   onRequestClose: () => void;
   children: ReactNode;
+  maxWidth: string;
 }
 
 const modalStyles = {
@@ -15,7 +16,6 @@ const modalStyles = {
     alignItems: 'center',
   },
   content: {
-    maxWidth: '35.375rem',
     borderRadius: '1.875rem',
     backgroundColor: 'var(--color-white)',
     padding: '4rem',
@@ -26,15 +26,21 @@ const modalStyles = {
   },
 };
 
-function Modal({ isOpen, onRequestClose, children }: Props) {
+function Modal({ isOpen, onRequestClose, children, maxWidth }: Props) {
   return (
     <ReactModal
       isOpen={isOpen}
       onRequestClose={onRequestClose}
-      style={modalStyles}
+      style={{
+        overlay: modalStyles.overlay,
+        content: {
+          ...modalStyles.content,
+          maxWidth,
+        },
+      }}
     >
       <button onClick={onRequestClose} className="absolute top-5 right-5">
-        <img src="/icons/x.svg" alt="X" />
+        <img src="/icons/x.svg" alt="Close" />
       </button>
       {children}
     </ReactModal>

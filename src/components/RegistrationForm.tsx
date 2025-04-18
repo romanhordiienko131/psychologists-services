@@ -32,9 +32,9 @@ function RegistrationForm() {
 
   return (
     <form onSubmit={handleSubmit(handleRegistration)}>
-      <p className="-tracking-2 mb-5 text-[2.5rem] leading-12 font-medium">
+      <h2 className="-tracking-2 mb-5 text-[2.5rem] leading-12 font-medium">
         Registration
-      </p>
+      </h2>
       <p className="mb-10 leading-5 text-black/50">
         Thank you for your interest in our platform! In order to register, we
         need some information. Please provide us with the following information.
@@ -45,20 +45,20 @@ function RegistrationForm() {
           placeholder="Name"
           fieldName="name"
           register={register}
-          error={errors.name && errors.name.message}
+          error={errors.name?.message}
         />
         <Input<RegistrationFormData>
           type="email"
           placeholder="Email"
           fieldName="email"
           register={register}
-          error={errors.email && errors.email.message}
+          error={errors.email?.message}
         />
         <PasswordInput<RegistrationFormData>
           placeholder="Password"
           fieldName="password"
           register={register}
-          error={errors.password && errors.password.message}
+          error={errors.password?.message}
         />
       </div>
       <button

@@ -39,8 +39,6 @@
     --color-green: #54be96;
     --color-black: #191a15;
     --color-white: #fbfbfb;
-    --color-purple: #4535Af;
-    --color-yellow: #fbc75e;
 
     --tracking-1: 0.01em;
     --tracking-2: 0.02em;
@@ -55,8 +53,6 @@ button {
 }
 
 body {
-    height: 100vh;
     font-family: 'Inter', sans-serif;
-    background-color: var(--color-white);
     color: var(--color-black);
 }

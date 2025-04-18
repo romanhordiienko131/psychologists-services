@@ -23,10 +23,7 @@ function HomePage() {
                 className="bg-green -tracking-1 flex max-w-[14.875rem] items-center gap-4.5 rounded-4xl px-12.5 py-4.5 text-xl leading-6 font-medium text-white"
               >
                 Get started
-                <img
-                  src="/icons/arrow-tr.svg"
-                  alt="Arrow pointing at top right corner"
-                />
+                <img src="/icons/arrow-tr.svg" alt="" />
               </Link>
             </div>
             <div className="relative flex">
@@ -40,24 +37,24 @@ function HomePage() {
               />
               <div className="bg-green absolute top-[333px] right-[254px] flex h-[118px] w-[312px] items-center justify-center gap-4 rounded-[1.25rem] p-8">
                 <div className="flex size-[3.375rem] items-center justify-center rounded-[0.813rem] bg-white">
-                  <img src="/icons/check.svg" alt="Check mark" />
+                  <img src="/icons/check.svg" alt="" />
                 </div>
                 <div>
-                  <p className="text-[0.875rem] text-white/50">
+                  <div className="text-[0.875rem] text-white/50">
                     Experienced psychologists
-                  </p>
-                  <p className="text-2xl font-bold text-white">15,000</p>
+                  </div>
+                  <div className="text-2xl font-bold text-white">15,000</div>
                 </div>
               </div>
-              <div className="bg-purple absolute top-[185px] right-[454px] flex size-10 -rotate-15 items-center justify-center rounded-[0.625rem]">
+              <div className="absolute top-[185px] right-[454px] flex size-10 -rotate-15 items-center justify-center rounded-[0.625rem] bg-[#4535af]">
                 <img
                   className="rotate-15"
                   src="/icons/question-mark.svg"
-                  alt="Question mark"
+                  alt=""
                 />
               </div>
-              <div className="bg-yellow absolute top-[38px] left-[449px] flex size-12 rotate-15 items-center justify-center rounded-[0.625rem]">
-                <img src="/icons/users.svg" alt="Users" />
+              <div className="absolute top-[38px] left-[449px] flex size-12 rotate-15 items-center justify-center rounded-[0.625rem] bg-[#fbc75e]">
+                <img src="/icons/users.svg" alt="" />
               </div>
             </div>
           </div>
